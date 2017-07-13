@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using TurtleEazyCheckout.Classes;
 
 namespace TurtleEazyCheckout.Forms
 {
@@ -22,11 +23,12 @@ namespace TurtleEazyCheckout.Forms
         {
             try
             {
+                Authenticator.AuthenticateUser();
                 this.DialogResult = System.Windows.Forms.DialogResult.OK;
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, "Error Closing Window", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, "Error logging to JIRA.", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }            
     }

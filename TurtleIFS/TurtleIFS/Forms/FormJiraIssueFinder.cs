@@ -186,9 +186,24 @@ namespace TurtleEazyCheckout.Forms
                     }
                 }
             }
-            catch
+            catch (Exception e)
             {
-                throw;
+                try
+                {
+                    if (Authenticator.AuthenticateUser())
+                    {
+                        throw e.InnerException;
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                catch (Exception)
+                {
+                    throw;
+                }
+
             }
             return string.Empty;
         }

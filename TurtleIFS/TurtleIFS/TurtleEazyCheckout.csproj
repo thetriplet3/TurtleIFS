@@ -78,6 +78,7 @@
     <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Authenticator.cs" />
     <Compile Include="Classes\BwArguments.cs" />
     <Compile Include="Classes\NotifierLync.cs" />
     <Compile Include="Classes\TicketItem.cs" />
